@@ -167,3 +167,25 @@ footer{
 .linkedIn {
     background-color: #5C83BD;
 }
+
+#profile-image img {
+    animation: floatAnimation 3s infinite alternate;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.card-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-image:hover {
+    transform: translateY(-10px);
+}
+

@@ -8,38 +8,83 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS para la animación de la foto flotante */
+        #profile-image img {
+            animation: floatAnimation 3s infinite alternate;
+        }
+
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* CSS para la animación de los títulos */
+        .typing-animation::after {
+            content: "|";
+            animation: blink 0.7s infinite alternate;
+        }
+
+        /* CSS para la animación del cursor */
+        .typing-animation.hide-cursor::after {
+            content: "";
+            animation: none;
+        }
+
+        /* CSS para ocultar el cursor después de la animación */
+        .typing-animation.finished::after {
+            content: "";
+            animation: none;
+            visibility: hidden;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="overlap">
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <header>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#" class="nav-link">Inicio</a></li>
-                    <li><a href="#section"  class="nav-link">Sobre mi</a></li>
-                    <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
-                    <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="hero-title">
-            <div class="hero-title-content">
-                <h1>Fabiola Valdes Ayon</h1>
-                <p class="description">Desarrollador Web</p>
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <header>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link">Inicio</a></li>
+                        <li><a href="#section"  class="nav-link">Sobre mi</a></li>
+                        <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
+                        <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="hero-title">
+                <div class="hero-title-content">
+                    <!-- clases a los elementos de título para animar -->
+                    <h1 class="typing-animation" id="title">Fabiola Valdes Ayon</h1>
+                    <p class="typing-animation" id="subtitle">Desarrollador Web</p>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Profile Image -->
-    <div id="profile-image">
-        <img src="resources/images/profileImage.png" alt="Fabiola Valdes Ayon - Picture">
-    </div>
-    <!-- About Section -->
-    <div class="section" id="section">
-        <h2>Sobre mi</h2>
-        <p class="description">Soy una profesional del área de tecnologías de la información con más de 11 años de experiencia. Me enfoco en la solución de problemas, proactiva, con gran ética de trabajo y excelentes habilidades de comunicación. Me gusta estar en constante aprendizaje y trabajar en mis áreas de oportunidad.</p>
-    </div>
+        <!-- Profile Image -->
+        <div id="profile-image">
+            <img src="resources/images/profileImage.png" alt="Fabiola Valdes Ayon - Picture">
+        </div>
+        <!-- About Section -->
+        <div class="section" id="section">
+            <h2>Sobre mi</h2>
+            <p class="description">Soy una profesional del área de tecnologías de la información con más de 11 años de experiencia. Me enfoco en la solución de problemas, proactiva, con gran ética de trabajo y excelentes habilidades de comunicación. Me gusta estar en constante aprendizaje y trabajar en mis áreas de oportunidad.</p>
+        </div>
     </div>
     <div class="work">
         <!-- Portfolio Section -->
@@ -47,17 +92,17 @@
             <h2>Portafolio</h2>
             <div class="card-layout">
                 <div class="card">
-                    <img src="" alt="Proyecto Centro Comunitario" class="card-image">
+                    <img src="./resources/images/ramito1.png" alt="Proyecto Centro Comunitario" class="card-image">
                     <h3 class="card-header">Proyecto Centro Comunitario</h3>
                     <p class= "description">HTML - CSS</p>
                 </div>
                 <div class="card">
-                    <img src="" alt="Proyecto Integrador Soluciones AMR" class="card-image">
+                    <img src="./resources/images/Soluciones AMR.png" alt="Proyecto Integrador Soluciones AMR" class="card-image">
                     <h3 class="card-header">Proyecto Integrador Soluciones AMR</h3>
                     <p class= "description">HTML - CSS - Javascript</p>
                 </div>
                 <div class="card">
-                    <img src="" alt="Lorem Ipsum" class="card-image">
+                    <img src="./resources/images/Ramito2.png" alt="Lorem Ipsum" class="card-image">
                     <h3 class="card-header">Lorem ipsum</h3>
                     <p class= "description">HTML - CSS - Javascript</p>
                 </div>
@@ -68,17 +113,17 @@
             <h2>Curriculum</h2>
             <div class="card-layout">
                 <div class="card">
-                    <img src="" alt="Educacion" class="card-image">
+                    <img src="./resources/images/generation1.jpeg" alt="Educacion" class="card-image">
                     <h3 class="card-header">Educacion</h3>
                     <p class= "description">Generation Mexico - U de G</p>
                 </div>
                 <div class="card">
-                    <img src="" alt="Experiencia Laboral" class="card-image">
+                    <img src="./resources/images/fakestoreapi.png" alt="Experiencia Laboral" class="card-image">
                     <h3 class="card-header">Experiencia Laboral</h3>
-                    <p class= "description">AT&T - Netprotect - Gara Group</p>
+                    <p class= "description">Fake Store Api</p>
                 </div>
                 <div class="card">
-                    <img src="" alt="Skills" class="card-image">
+                    <img src="./resources/images/logo-html-5-css-javascript-source-code-for-the-taking-23.png" alt="Skills" class="card-image">
                     <h3 class="card-header">Skills</h3>
                     <p class= "description">HTML - CSS - Javascript</p>
                 </div>
@@ -105,6 +150,50 @@
         <div class="footer-buttons">
             <button class="social-button github"><a href="github.com"><img src="resources/images/GitHub-Logo.svg" alt="Github" width="20px" height="20px"></a></button>
             <a href="https://www.linkedin.com/in/fabiola-valdes-ayon-61b55b31/?originalSubdomain=mx"><button class="social-button linkedIn"><img src="resources/images/LinkedIn-Logo.svg" alt="LinkedIn" width="20px" height="20px"></button></a>
+            <script>
+                // Script para la animación de escritura y borrado
+                const titles = ["Fabiola Valdes Ayon", "Desarrollador Web"];
+                let currentTitle = 0;
+                let currentCharacter = 0;
+        
+                function typeTitle() {
+                    const titleElement = document.getElementById("title");
+                    const subtitleElement = document.getElementById("subtitle");
+        
+                    if (currentCharacter <= titles[currentTitle].length) {
+                        titleElement.textContent = titles[currentTitle].substring(0, currentCharacter);
+                        subtitleElement.textContent = ""; // Para borrar el subtítulo mientras se escribe el título
+                        currentCharacter++;
+                        setTimeout(typeTitle, 100); // Con esto se va a ajustar el tiempo según lo que yo quiera
+                    } else {
+                        // Esto espera un tiempo antes de borrar
+                        setTimeout(eraseTitle, 1000);
+                    }
+                }
+        
+                function eraseTitle() {
+                    const titleElement = document.getElementById("title");
+                    const subtitleElement = document.getElementById("subtitle");
+        
+                    if (currentCharacter >= 0) {
+                        titleElement.textContent = titles[currentTitle].substring(0, currentCharacter);
+                        subtitleElement.textContent = "";
+                        currentCharacter--;
+                        setTimeout(eraseTitle, 50); // Con esto se va a ajustar el tiempo según lo que yo quiera
+                    } else {
+                        // Cambia al próximo título después de borrar
+                        currentTitle = (currentTitle + 1) % titles.length;
+                        setTimeout(typeTitle, 500); // Con esto se va a ajustar el tiempo según lo que yo quiera
+                    }
+                }
+        
+                // Comienza la animación al cargar la página
+                window.onload = function() {
+                    typeTitle();
+                };
+            </script>
+        </body>
+        </html>
         </div>
     </footer>
 </body>
